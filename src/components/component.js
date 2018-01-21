@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { edit_form } from '../actions_creators/actionTypes';
+import { add_student } from '../actions_creators/actionTypes';
 
 //This is a component as well as a container
 export class InputFields extends Component {
@@ -7,6 +9,7 @@ export class InputFields extends Component {
         this.submitButtonHandler = this.submitButtonHandler.bind(this);
     }
 
+    //this button need to call the action creator
     submitButtonHandler() {
 
     }
@@ -30,24 +33,39 @@ export class InputFields extends Component {
     }
 }
 
+//mapping for the List Div component
+const mapStatetoProps = (state) => {
+    return { incoming: state.data }
+}
+
+//mapping for the List Div component
+//editForm is an action-creator
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onListTupleClick: id => {
+            dispatch(editForm(id))
+        }
+    }
+}
+
 export class ListDiv extends Component {
     constructor(props) {
         super(props);
     }
-
+    //Somewhere here i need to call the getSTore function
     render() {
-        var incoming = store.getState().data;
+        var incoming_data = this.props.incoming;
         return (
-            Object.keys(incoming).map(
+            Object.keys(incoming_data).map(
                 (elem, index) => {
-                    return (<ListTuple key={index} id={elem} array={store.getState().data[elem]} onListTupleClick={onTupleClick} />);
+                    return (<ListTuple key={index} id={elem} array={incoming_data[elem]} onListTupleClick={onTupleClick} />);
                 })
 
         );
     }
 }
 
-export class ListTuple extends Component {
+class ListTuple extends Component {
     constructor(props) {
         super(props);
         console.log('Created a ListTuple');

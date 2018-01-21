@@ -1,4 +1,5 @@
 export const ADD_STUD = "ADD_STUD";
+export const EDIT_FORM = "EDIT_FORM";
 
 //Action Creator for adding student
 export function add_student(arr) {
@@ -8,3 +9,11 @@ export function add_student(arr) {
     }
 }
 
+
+//Action Creator for editing student tuple
+export function edit_form(id) {
+    return {
+        type: EDIT_FORM,
+        data: id
+    }
+}
