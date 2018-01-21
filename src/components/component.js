@@ -34,13 +34,13 @@ export class InputFields extends Component {
 }
 
 //mapping for the List Div component
-const mapStatetoProps = (state) => {
+const mapStatetoListDivProps = (state) => {
     return { incoming: state.data }
 }
 
 //mapping for the List Div component
 //editForm is an action-creator
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToListDivProps = (dispatch) => {
     return {
         onListTupleClick: id => {
             dispatch(editForm(id))
