@@ -3,6 +3,7 @@ export const EDIT_FORM = "EDIT_FORM";
 
 //Action Creator for adding student
 export function add_student(arr) {
+    debugger;
     return {
         type: ADD_STUD,
         data: arr

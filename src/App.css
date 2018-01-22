@@ -26,3 +26,19 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+#app-input-fields{
+  background-color: coral;
+}
+
+input{
+  margin: 0.5cm
+}
+
+.list-tuple{
+  margin:0.5cm;
+  background-color: cornsilk;
+  border: solid 1mm black;
+
+}
