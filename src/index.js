@@ -5,10 +5,9 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
-// import {addStudentReducer}
-import addStudentReducer from './reducers/reducer';
+import { addStudentReducer, editStudentReducer } from './reducers/reducer';
 
-let store = createStore(combineReducers({ data: addStudentReducer }))
+export const store = createStore(combineReducers({ data: (addStudentReducer) }))
 
 ReactDOM.render(<Provider store={store}>
     <App />
